@@ -1,4 +1,4 @@
-$Names = { 'Praveen', 'Dasan', 'Punitha', 'Manju'}
+$Names = { 'Praveen', 'Dasan', 'Punitha', 'Manju' }
 foreach ($Name in $Names) {
     Write-Host "Hi, my name is $Name!"
 }
@@ -28,3 +28,17 @@ $names = @("Any", "Bob", "Celine", "David")
 $names | ForEach-Object {
     "Hi, my name is $_"
 }
+
+#Foreach object advantage
+#Begin, Process, End block
+"Daniel", "Joseph", "Mark" | ForEach-Object -Begin {
+    $Namelist = @()
+} -Process {
+    $Namelist += "Hi, my name is $_"
+}-End {
+    #Count messages and output
+    Write-Host "Total messages: $($Namelist.Count)"
+    $Namelist
+}
+
+#Section 7.5: Continue
