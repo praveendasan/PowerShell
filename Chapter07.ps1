@@ -102,7 +102,7 @@ while (Get-Process notepad -ErrorAction SilentlyContinue) {
     Start-Sleep -Milliseconds 500
 }
 
-
+#region while
 $i = 0
 Do {
     $i++
@@ -113,3 +113,4 @@ Do {
     $i++
     "Number $i"
 } until ($i -eq 3)
+#endregion
